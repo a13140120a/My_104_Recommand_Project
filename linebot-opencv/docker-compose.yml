@@ -1,0 +1,14 @@
+version: "2"
+services:
+  ngrok:
+    container_name: simple_ngrok
+    image: wernight/ngrok
+    ports:
+    - "4040:4040"
+    command: ngrok http python-chatbot:5000 -region ap --authtoken your_ngrok_token
+    depends_on:
+    - python-chatbot
+  python-chatbot: 
+    build:
+      context: .
+      dockerfile: dockerfile

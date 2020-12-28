@@ -30,4 +30,5 @@
   3. [爬蟲及初步資料清洗](https://github.com/a13140120a/My_104_Recommand_Project/tree/master/c104/c104)
   4. [建模部分](https://github.com/a13140120a/My_104_Recommand_Project/tree/master/create_model)
   5. [LineBot串接Flak、OpenCV、Tableau](https://github.com/a13140120a/My_104_Recommand_Project/tree/master/linebot-opencv)
+  6. [Demo示範影片連結](https://www.youtube.com/watch?v=FiGBseq4icc&feature=youtu.be&ab_channel=%E8%AC%99%E6%81%86%E8%8C%83)
   

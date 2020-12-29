@@ -18,6 +18,7 @@
 以下是本次專案運用技術:
   1. 利用爬蟲對104進行爬取職缺資料
     * 2020/12/28更新: 改為使用scrapy 爬蟲框架，並於itempipeline 直接做初步清洗
+    * 2020/12/29更新: 增加每日爬取的功能
   2. 利用jupyter notebook 清洗資料
     * 2020/12/28更新: 已更改到scrapy 的itempipeline
   2. 利用scikit learn CountVectorize 將文字像量化之後使用樸素貝葉斯分類

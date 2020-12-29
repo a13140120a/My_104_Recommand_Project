@@ -16,7 +16,10 @@
   4. 拍照辨識功能: 使用者可以藉由LineBot 上傳大頭照，辨識出是否符合證件照規格
   
 以下是本次專案運用技術:
-  1. 利用爬蟲框架scrapy 對104進行爬取職缺資料，並於pipeline做初步清洗
+  1. 利用爬蟲對104進行爬取職缺資料
+    * 2020/12/28更新: 改為使用scrapy 爬蟲框架，並於itempipeline 直接做初步清洗
+  2. 利用jupyter notebook 清洗資料
+    * 2020/12/28更新: 已更改到scrapy 的itempipeline
   2. 利用scikit learn CountVectorize 將文字像量化之後使用樸素貝葉斯分類
   3. 分類完之後再使用gensim word2vec 做職缺的相似度計算
   4. 使用OpenCV 做為影像辨識部分，先取特徵框，再依特徵框內雜質多寡辨識是否符合證件照規範

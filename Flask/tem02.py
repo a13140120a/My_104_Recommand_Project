@@ -37,9 +37,3 @@ if __name__ == '__main__':
 #程式開始跑之後進入網站網址
 #http://127.0.0.1:5000/html2
 
-
-
-
-
-
-#<p><input type = 'textbox'   class='form-control' style="font-size:16px;padding:100px"  name = 'work'  placeholder="請詳述您的工作經歷"></p>

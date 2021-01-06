@@ -176,9 +176,9 @@ class MongoDBPipeline:
 
 
     def open_spider(self, spider):
-        db_uri = spider.settings.get('MONGODB_URI', 'mongodb://192.168.6.128:27017')
-        db_name = spider.settings.get('MONGODB_DB_NAME', 'Topic_104')
-        self.db_client = pymongo.MongoClient('mongodb://192.168.6.128:27017')
+        db_uri = spider.settings.get('MONGODB_URI')
+        db_name = spider.settings.get('MONGODB_DB_NAME')
+        self.db_client = pymongo.MongoClient(db_uri)
         self.db = self.db_client[db_name]
 
 

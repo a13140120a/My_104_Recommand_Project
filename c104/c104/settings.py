@@ -60,7 +60,7 @@ DEFAULT_REQUEST_HEADERS = {
 #EXTENSIONS = {
 #    'scrapy.extensions.telnet.TelnetConsole': None,
 #}
-MONGODB_URI = 'mongodb://192.168.6.128:27017'
+MONGODB_URI = 'mongodb://192.168.160.130:27017'
 MONGODB_DB_NAME = 'Topic_104'
 
 # Configure item pipelines

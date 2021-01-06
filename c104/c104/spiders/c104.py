@@ -8,7 +8,7 @@ class C104Spider(scrapy.Spider):
     allowed_domains = ['www.104.com.tw']
 
     #第一次爬取全部資料，之後只爬取當天更新資料
-    First_time = False
+    First_time = True
 
     def __init__(self,*args, **kwargs):
         #定義 start_urls
@@ -17,7 +17,7 @@ class C104Spider(scrapy.Spider):
         with open("c104/spiders/104area.txt", "r")as f:
             self.areas =  f.read().split("\n")
         with open(file='./JobCat.json', mode='r', encoding="UTF-8") as file:
-            self.JobCat = json.loads(file.read(),encoding='utf-8-sig')
+            self.JobCat = json.loads(file.read())
 
 
         # 一次最多只能顯示150頁

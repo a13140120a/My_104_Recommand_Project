@@ -43,9 +43,9 @@ def submit(request):
         return render(request,"result.html",locals())
     except ValueError as e:
         print(e)
-        return HttpResponse("吃屎長大?")
+        return HttpResponse("錯誤")
     except ZeroDivisionError as e:
         print(e)
-        return HttpResponse("吃屎長大?")
+        return HttpResponse("錯誤")
 
 

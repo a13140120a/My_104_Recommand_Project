@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    {% load static %}
+    <meta charset="UTF-8">
+    <title>Find a Job</title>
+    <link href="{% static 'bootstrap.min.css' %}" rel="stylesheet">
+    <link href="{% static 'form-validation.css' %}" rel="stylesheet">
+    <link href="{% static 'style.css' %}" rel="stylesheet">
+
+    <style>
+      .bd-placeholder-img {
+        font-size: 1.125rem;
+        text-anchor: middle;
+        -webkit-user-select: none;
+        -moz-user-select: none;
+        user-select: none;
+      }
+
+      @media (min-width: 768px) {
+        .bd-placeholder-img-lg {
+          font-size: 3.5rem;
+        }
+      }
+    </style>
+</head>
+<body>
+    <h2>您適合的職缺有:</h2>
+    <table style="border:3px #cccccc solid;" cellpadding="10" border='1'>
+        <thead>
+            <th>職位</th>
+            <th>類別</th>
+            <th>公司</th>
+            <th>網站連結</th>
+        </thead>
+        <tbody>
+            {% for data in top10_recommendation %}
+            <tr>
+                <td>{{ data.jobName }}</td>
+                <td>{{ data.jobCat_main }}</td>
+                <td>{{ data.custName }}</td>
+                <td><a href="https://www.104.com.tw/job/{{data.id}}">https://www.104.com.tw/job/{{data.id}}</a></td>
+            </tr>
+            {% endfor%}
+        </tbody>
+    </table>
+    <form class="w-40 btn btn-primary btn-lg" method="get" action="/back">
+        <button class="w-40 btn btn-primary btn-lg" type="submit" action = "/back" method = "get">
+            上一頁
+        </button>
+    </form>
+
+</body>
+</html>

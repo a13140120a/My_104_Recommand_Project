@@ -1,6 +1,0 @@
-Flask
-gunicorn
-gensim
-jieba
-pymongo
-

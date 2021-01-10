@@ -25,7 +25,7 @@
   3. 分類完之後再使用gensim word2vec 做職缺的相似度計算
   4. 使用OpenCV 做為影像辨識部分，先取特徵框，再依特徵框內雜質多寡辨識是否符合證件照規範
   5. 建置Flask 網頁並佈署至Heroku 上，供使用者使用，以連結LineBot
-     * 2021/1*10 更新: Flask 改為使用Django架設網頁
+     * 2021/1/10 更新: Flask 改為使用Django架設網頁
   6. 使用Docker 建置LineBot 聊天機器人，分別連接到Flask 網頁以及 Tableau 職缺分析
   7. Tableau 職缺分析
 

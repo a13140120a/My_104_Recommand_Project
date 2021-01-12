@@ -31,7 +31,7 @@
   7. Tableau 職缺分析
 
 連結:
-  1. [履歷尋找職缺網站](http://for-workers.herokuapp.com/html2)
+  1. [履歷尋找職缺網站](https://django104.herokuapp.com/)
   2. [職缺尋找履歷網站](http://for-company-104.herokuapp.com/forcompany)
   3. [爬蟲及初步資料清洗](https://github.com/a13140120a/My_104_Recommand_Project/tree/master/c104/c104)
   4. [建模部分](https://github.com/a13140120a/My_104_Recommand_Project/tree/master/create_model)

@@ -87,19 +87,17 @@ def compute_similarity(cv_BOW, job_BOW):
     return job_prob
 
 
-# 定義 recommendation function，顯示10筆結果
 def show_recommendation_id(cv_clean, jobs_query):
-    cv_BOW = turn_content_BOW(cv_clean)
+    #cv_BOW = turn_content_BOW(cv_clean)
     # 確認BOW內的字詞包含在模型內
     cv_BOW_for_Word2Vec = []
     model_train_vocab = set(model_train.wv.vocab.keys())
-    for i in cv_BOW:
+    for i in cv_clean:
         if i in model_train_vocab:
             cv_BOW_for_Word2Vec.append(i)
 
-    # 將職缺資料轉成 Word2Vec格式
     lst_jobs_content = [] #裝 jiebaCutList_join
-    lst_jobs_url = [] #裝url
+    lst_jobs_url = [] #裝 url
 
     for data in jobs_query:
         lst_jobs_content.append(data.jiebaCutList_join)

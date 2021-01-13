@@ -1,0 +1,9 @@
+django
+gunicorn
+jieba
+joblib
+scikit-learn == 0.23.1
+pandas
+gensim
+psycopg2
+whitenoise

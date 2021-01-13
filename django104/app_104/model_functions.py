@@ -88,11 +88,11 @@ def compute_similarity(cv_BOW, job_BOW):
 
 
 def show_recommendation_id(cv_clean, jobs_query):
-    #cv_BOW = turn_content_BOW(cv_clean)
+    cv_BOW = turn_content_BOW(cv_clean)
     # 確認BOW內的字詞包含在模型內
     cv_BOW_for_Word2Vec = []
     model_train_vocab = set(model_train.wv.vocab.keys())
-    for i in cv_clean:
+    for i in cv_BOW:
         if i in model_train_vocab:
             cv_BOW_for_Word2Vec.append(i)
 

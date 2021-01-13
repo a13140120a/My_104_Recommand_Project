@@ -4,9 +4,9 @@
     {% load static %}
     <meta charset="UTF-8">
     <title>Find a Job</title>
-    <link href="{% static 'bootstrap.min.css' %}" rel="stylesheet">
-    <link href="{% static 'form-validation.css' %}" rel="stylesheet">
-    <link href="{% static 'style.css' %}" rel="stylesheet">
+    <link href="{% static 'app_104/bootstrap.min.css' %}" rel="stylesheet">
+    <link href="{% static 'app_104/form-validation.css' %}" rel="stylesheet">
+    <link href="{% static 'app_104/style.css' %}" rel="stylesheet">
 
     <style>
       .bd-placeholder-img {
@@ -39,7 +39,7 @@
                 <td>{{ data.jobName }}</td>
                 <td>{{ data.jobCat_main }}</td>
                 <td>{{ data.custName }}</td>
-                <td><a href="https://www.104.com.tw/job/{{data.id}}">https://www.104.com.tw/job/{{data.id}}</a></td>
+                <td><a href="https://www.104.com.tw/job/{{data.url}}">https://www.104.com.tw/job/{{data.url}}</a></td>
             </tr>
             {% endfor%}
         </tbody>

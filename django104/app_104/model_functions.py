@@ -81,8 +81,8 @@ def turn_content_BOW(content):
 
 
 # 計算 Word2Vec similarity
-def compute_similarity(cv_BOW, job_BOW, model_train):
-
+def compute_similarity(cv_BOW, job_BOW):
+    global model_train
     job_prob = model_train.wv.n_similarity(cv_BOW, job_BOW)
     return job_prob
 
@@ -90,7 +90,6 @@ def compute_similarity(cv_BOW, job_BOW, model_train):
 # 定義 recommendation function，顯示10筆結果
 def show_recommendation_id(cv_clean, jobs_query):
     cv_BOW = turn_content_BOW(cv_clean)
-    global model_train
     # 確認BOW內的字詞包含在模型內
     cv_BOW_for_Word2Vec = []
     model_train_vocab = set(model_train.wv.vocab.keys())
@@ -98,22 +97,19 @@ def show_recommendation_id(cv_clean, jobs_query):
         if i in model_train_vocab:
             cv_BOW_for_Word2Vec.append(i)
 
-    cv_BOW = cv_BOW_for_Word2Vec
-
     # 將職缺資料轉成 Word2Vec格式
-    lst_jobs_content = [] #裝jieba_cut_list
+    lst_jobs_content = [] #裝 jiebaCutList_join
     lst_jobs_url = [] #裝url
 
     for data in jobs_query:
-        lst_jobs_content.append(data["jieba_cut_list"])
-        lst_jobs_url.append(data["_id"])
+        lst_jobs_content.append(data.jiebaCutList_join)
+        lst_jobs_url.append(data.url)
 
     # 計算所有CV與職缺的similarity，排序後儲存10筆相關度最高職缺
     dict_prob_id = {}
-
-    for i, j in enumerate(lst_jobs_content):
-        job_url = lst_jobs_url[i]
-        job_prob = compute_similarity(cv_BOW, j, model_train)
+    for index, j in enumerate(lst_jobs_content):
+        job_url = lst_jobs_url[index]
+        job_prob = compute_similarity(cv_BOW_for_Word2Vec, j.split(" "))
         dict_prob_id[job_prob] = job_url
     result_id_list = [(k, dict_prob_id[k]) for k in sorted(dict_prob_id.keys(), reverse=True)[0:10]]
 
@@ -123,12 +119,7 @@ def show_recommendation_id(cv_clean, jobs_query):
 def recommendation_id_2_result(top10_recommendation_id):
     result_list = []
     for _id in top10_recommendation_id:
-        queryset = Job.objects.filter(data___id=_id[1])
-        data = queryset[0].data
-
-        # 因為html 變數不允許底線為第一個字元
-        data['id']=data.pop('_id')
-
-        result_list.append(data)
-
+        # _id:  (0.7484418, '74c0l')
+        queryset = Job.objects.filter(url=_id[1])
+        result_list.append(queryset[0])
     return result_list

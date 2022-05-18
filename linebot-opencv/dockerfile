@@ -11,5 +11,5 @@ RUN pip install -r requirements.txt
 #映射port
 EXPOSE 5000
 
-#較container預設執行app.py
+# container預設執行指令(python app.py)
 CMD ["python", "app.py"]
